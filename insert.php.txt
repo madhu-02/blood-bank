@@ -1,0 +1,27 @@
+<?php
+$database="donor_details"; 
+$Donor_Name = $_POST[' Donor_Name'];
+$Age = $_POST[' Age'];
+$Gender = $_POST[' Gender'];
+$Address = $_POST[' Address'];
+$Email = $_POST[' Email'];
+$Mobile = $_POST[' Mobile'];
+$Blood_Group = $_POST[' Blood_Group'];
+
+    $con = mysql_connect("localhost","root" ,"");
+    if (!$con)
+    {
+    die('Could not connect: ' . mysql_error());
+    }
+    mysql_select_db("$database", $con);
+
+$query = "INSERT INTO info (first,last)VALUES ('$first','$last')";
+mysql_query($query);
+
+echo "<script type='text/javascript'>\n";
+echo "alert('Successful');\n";
+echo "</script>"; 
+
+
+mysql_close();
+?>
